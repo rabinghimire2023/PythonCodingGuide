@@ -17,9 +17,9 @@ class TestClass(unittest.TestCase):
         self.assertFalse(validate_email("rabin ghimire @yahoo.com"))
 
     def test_invalid_providers(self):
-        self.assertFalse(validate_email("rabin@yopmail.com"))
-        self.assertFalse(validate_email("rabin@disposablemail.com"))
-        self.assertFalse(validate_email("rabin@invalidprovider.org"))
+        self.assertFalse(validate_email("rabinghimire@yopmail.com"))
+        self.assertFalse(validate_email("rabinghimire@disposablemail.com"))
+        self.assertFalse(validate_email("rabinghimire@invalidprovider.org"))
 
 if __name__ == "__main__":
     unittest.main()
