@@ -1,8 +1,9 @@
-class Account():
+from abc import ABC, abstractmethod
+class Account:
     def __init__(self, balance):
         self.balance = balance
-    
-    def withdraw(self,amount):
+    @abstractmethod
+    def withdraw(self):
         pass
 class SavingsAccount(Account):
     def __init__(self, balance) -> None:
