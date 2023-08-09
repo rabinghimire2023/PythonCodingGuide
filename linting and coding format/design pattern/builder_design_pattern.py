@@ -1,5 +1,7 @@
 """Builder design pattern"""
 from abc import ABC, abstractmethod
+
+
 class Document:
     """
     Document
@@ -34,6 +36,8 @@ class DocumentBuilder(ABC):
     def get_document(self):
         """Get document
         """
+
+
 class PDFDocumentBuilder(DocumentBuilder):
     """PDF Dcoument builder
 
@@ -58,7 +62,7 @@ class PDFDocumentBuilder(DocumentBuilder):
 
 class HTMLDocumentBuilder(DocumentBuilder):
     """
-    HTML Dcoument Builder 
+    HTML Dcoument Builder
 
     Args:
         DocumentBuilder (class): Inherited base class Document Builder
@@ -67,10 +71,10 @@ class HTMLDocumentBuilder(DocumentBuilder):
         self.document = Document()
 
     def set_header(self):
-        self.document.header = "<html><head><title>HTML Document</title></head>"
+        self.document.header = "<html><head><title>TITLE</title></head>"
 
     def set_body(self):
-        self.document.body = "<body><h1>This is the HTML document body.</h1></body>"
+        self.document.body = "<body><h1>Document body.</h1></body>"
 
     def set_footer(self):
         self.document.footer = "</html>"
@@ -99,6 +103,8 @@ class PlainTextDocumentBuilder(DocumentBuilder):
 
     def get_document(self):
         return self.document
+
+
 class DocumentGenerator:
     """Document Generator
     """
@@ -116,6 +122,8 @@ class DocumentGenerator:
         """Get document
         """
         return self.builder.get_document()
+
+
 if __name__ == "__main__":
     pdf_builder = PDFDocumentBuilder()
     html_builder = HTMLDocumentBuilder()

@@ -1,5 +1,7 @@
 """SIngleton Design pattern
 """
+
+
 class ConfigurationManager:
     """Configuration Manager
     """
@@ -39,6 +41,8 @@ class ConfigurationManager:
         """
         for key, value in self.config_data.items():
             print(f"{key}: {value}")
+
+
 if __name__ == "__main__":
     config_manager1 = ConfigurationManager()
     config_manager1.set_config("LogLevel", "DEBUG")
@@ -55,13 +59,13 @@ if __name__ == "__main__":
     config_manager2.print_config()
 
 
-#output:
-#Configuration Manager 1:
-#LogLevel: DEBUG
-#MaxConnections: 10
-#Timeout: 30
+# output:
+# Configuration Manager 1:
+# LogLevel: DEBUG
+# MaxConnections: 10
+# Timeout: 30
 
-#Configuration Manager 2:
-#LogLevel: DEBUG
-#MaxConnections: 10
-#Timeout: 30
+# Configuration Manager 2:
+# LogLevel: DEBUG
+# MaxConnections: 10
+# Timeout: 30

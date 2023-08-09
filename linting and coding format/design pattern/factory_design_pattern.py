@@ -3,6 +3,7 @@
 import logging
 import datetime
 
+
 class FileLogger:
     """File Logger
     """
@@ -15,7 +16,9 @@ class FileLogger:
         Args:
             msg (str): message.
         """
-        return logging.info("File Logging %s at %s", msg, datetime.datetime.now())
+        return logging.info("File Logging %s at %s", msg,
+                            datetime.datetime.now())
+
 
 class ConsoleLogger:
     """Console Logger
@@ -29,7 +32,9 @@ class ConsoleLogger:
         Args:
             msg (str): Message.
         """
-        return logging.warning("Console Logging %s at %s", msg, datetime.datetime.now())
+        return logging.warning("Console Logging %s at %s",
+                               msg, datetime.datetime.now())
+
 
 class DatabaseLogger:
     """Database Logger
@@ -40,21 +45,25 @@ class DatabaseLogger:
     def logging(self, msg):
         """Logging
         """
-        return logging.info("Database Logging %s at %s", msg, datetime.datetime.now())
+        return logging.info("Database Logging %s at %s",
+                            msg, datetime.datetime.now())
+
+
 class LoggerFactory:
     """Logger Factory
     """
-    def __init__(self,logger_type: str)->None:
-        self.logger_type=logger_type
+    def __init__(self, logger_type: str) -> None:
+        self.logger_type = logger_type
+
     def factory_logger(self):
         """
         Factory logger
         """
         loggers = {
-        "File": FileLogger,
-        "Console": ConsoleLogger,
-        "Database": DatabaseLogger
-    }
+           "File": FileLogger,
+           "Console": ConsoleLogger,
+           "Database": DatabaseLogger
+            }
         return loggers[self.logger_type]()
 
 
